@@ -34,9 +34,10 @@ export class Port {
         console.log(
           "Assigned vessel " + vessel.name + " to dock " + data.predictedBerth
         );
-      }).catch(err => {console.log("API error: " + err)});
-    /*if(prediction != 0) {
-        this.docks[prediction].addVessel(vessel);
-      }*/
+            this.docks.find(dock => dock.name == data.predictedBerth)
+      })
+      .catch((err) => {
+        console.log("API error: " + err);
+      });
   }
 }

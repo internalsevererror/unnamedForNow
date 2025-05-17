@@ -13,7 +13,12 @@ import { Dock } from "./Dock";
 import { Vessel, Size } from "./Vessel";
 
 let time: number = 0;
-let docks: Dock[] = [new Dock("Dock1", 10, 10, 10, ["Cargo"])];
+let docks: Dock[] = [new Dock("Berth_1", 10, 10, 10, ["Cargo"])];
+docks.push(new Dock("Berth_2", 10, 10, 10, ["Cargo"]));
+docks.push(new Dock("Berth_3", 10, 10, 10, ["Cargo"]));
+docks.push(new Dock("Berth_4", 10, 10, 10, ["Cargo"]));
+docks.push(new Dock("Berth_5", 10, 10, 10, ["Cargo"]));
+
 let port: Port = new Port("name1", docks);
 let ship1: Vessel = new Vessel(
   new Size(10, 10, 10),
