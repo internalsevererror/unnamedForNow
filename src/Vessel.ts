@@ -22,6 +22,7 @@ export class Vessel {
   public startingETA: number;
   public speed: number;
   public unloadTimeframe: number; // in ms or seconds, depending on your system
+  private weather: number = 1;
 
   constructor(
     size: Size,
@@ -29,7 +30,7 @@ export class Vessel {
     cargoType: string,
     expectedArrival: number,
     speed: number,
-    unloadTimeframe: number,
+    unloadTimeframe: number
   ) {
     this.size = size;
     this.name = name;
@@ -42,13 +43,22 @@ export class Vessel {
 
   move(): boolean {
     console.log(this.name + " ETA: " + this.expectedArrival);
-    if(this.expectedArrival <= 0) {
+    if (this.expectedArrival <= 0) {
       return false;
     }
-    this.expectedArrival -= this.speed;
+    if (Math.random() < 0.03 && this.weather != 0.8) {
+      console.log(this.name + " has encountered bad weather");
+      this.weather = 0.8;
+      setTimeout(
+        () => {
+          this.weather = 1;
+          console.log(this.name + " got out of the storm");
+        },
+        Math.random() * (20000 - 5000 + 1) + 5000
+      );
+    }
+
+    this.expectedArrival -= this.speed * this.weather;
     return true;
   }
-
-  }
-
-
+}

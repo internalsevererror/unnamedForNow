@@ -37,17 +37,19 @@ export class Dock {
   }
 
   public dock(vessel: Vessel): boolean {
-    if (this.isOccupied) {
+    if (!(this.isOccupied || (this.length >= vessel.size.length && this.width >= vessel.size.width && this.depth >= vessel.size.depth))) {
       return false;
     }
 
     this.currentVessel = vessel;
     this.isOccupied = true;
     console.log("Vessel " + vessel.name + " docked at dock " + this.name);
+    setTimeout(() => {this.undock(vessel)}, vessel.unloadTimeframe)
     return true;
   }
 
-  public undock(): void {
+  public undock(vessel: Vessel): void {
+    console.log("Vessel " + vessel.name + " undocked")
     this.currentVessel = null;
     this.isOccupied = false;
   }
