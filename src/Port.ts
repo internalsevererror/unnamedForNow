@@ -13,9 +13,9 @@ export class Port {
   public addVessel(vessel: Vessel): void {
     //choose dock and call addVessel on that dock
     let prediction = 0;
-    fetch("localhost:5000/predict", {
+    fetch("http://localhost:5000/predict", {
       method: "POST",
-      headers: { "Content-type": "application/json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         size: {
           length: vessel.size.length,
@@ -32,7 +32,7 @@ export class Port {
       .then((res) => res.json())
       .then((data) => {
         console.log(
-          "Assigned vessel " + vessel.name + " to dock " + prediction
+          "Assigned vessel " + vessel.name + " to dock " + data.predictedBerth
         );
       }).catch(err => {console.log("API error: " + err)});
     /*if(prediction != 0) {

@@ -18,7 +18,7 @@ let port: Port = new Port("name1", docks);
 let ship1: Vessel = new Vessel(
   new Size(10, 10, 10),
   "Cocaine ship",
-  "Cargo",
+  "Passenger",
   2000,
   20,
   2000
@@ -26,7 +26,7 @@ let ship1: Vessel = new Vessel(
 let ship2: Vessel = new Vessel(
   new Size(20, 20, 20),
   "Meth ship",
-  "Cargo",
+  "Passenger",
   2000,
   20,
   2000
