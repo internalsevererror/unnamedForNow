@@ -34,7 +34,7 @@ export class Port {
         console.log(
           "Assigned vessel " + vessel.name + " to dock " + data.predictedBerth
         );
-            this.docks.find(dock => dock.name == data.predictedBerth)
+            this.docks.find(dock => dock.name == data.predictedBerth)?.addVessel(vessel);
       })
       .catch((err) => {
         console.log("API error: " + err);
