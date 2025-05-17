@@ -29,7 +29,7 @@ let ship1: Vessel = new Vessel(
   2000
 );
 let ship2: Vessel = new Vessel(
-  new Size(20, 20, 20),
+  new Size(10, 10, 10),
   "Meth ship",
   "Passenger",
   2000,
@@ -37,7 +37,7 @@ let ship2: Vessel = new Vessel(
   2000
 );
 let ship3: Vessel = new Vessel(
-  new Size(20, 20, 20),
+  new Size(10, 10, 10),
   "Fent ship",
   "Passenger",
   2000,
@@ -45,7 +45,7 @@ let ship3: Vessel = new Vessel(
   2000
 );
 let ship4: Vessel = new Vessel(
-  new Size(20, 20, 20),
+  new Size(10, 10, 10),
   "Ketamine ship",
   "Passenger",
   2000,
@@ -53,7 +53,7 @@ let ship4: Vessel = new Vessel(
   2000
 );
 let ship5: Vessel = new Vessel(
-  new Size(20, 20, 20),
+  new Size(10, 10, 10),
   "LSD ship",
   "Passenger",
   2000,
@@ -61,7 +61,7 @@ let ship5: Vessel = new Vessel(
   2000
 );
 let ship6: Vessel = new Vessel(
-  new Size(20, 20, 20),
+  new Size(10, 10, 10),
   "Amphetamine ship",
   "Passenger",
   2000,
