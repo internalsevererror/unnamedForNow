@@ -20,6 +20,7 @@ export class Port {
       })
       .catch((err) => {
         console.log("API error");
+        console.dir(err);
       });
       /*if(prediction != 0) {
         this.docks[prediction].addVessel(vessel);
