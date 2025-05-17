@@ -90,7 +90,7 @@ setInterval(() => {
   port.docks.forEach((dock) => {
     if (!dock.isOccupied && dock.queue.length != 0) {
       console.log("Update dock");
-      let poppedVessel = dock.queue.pop();
+      let poppedVessel = dock.queue.shift();
       if (poppedVessel) {
         dock.dock(poppedVessel);
       }
